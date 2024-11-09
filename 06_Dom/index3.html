@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+    /*function addLanguage(langName)
+    {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector(".language").appendChild(li);
+    }
+    addLanguage("c++")
+    addLanguage("c++")
+    addLanguage("c++") */
+
+    function addlanguage(langname)
+    {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langname));
+        document.querySelector('.language').appendChild(li);
+    }
+    addlanguage("python")
+    addlanguage("typescript")
+
+    const secondLang = document.querySelector('li:nth-child(2)');
+    secondLang.innerHTML = "mongoDB"
+
+    const lastlang = document.querySelector('li:last-child');
+    lastlang.remove();
+</script>
+</html>

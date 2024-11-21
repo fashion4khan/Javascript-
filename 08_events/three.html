@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<hea <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+
+    <body>
+        <h1>Chai or JavaScript</h1>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+
+        <script>
+            /* let ok;
+            const sayDate = function () {
+                console.log("hi", Date.now());
+            }
+            const startDate = document.querySelector("#start").addEventListener("click", function () {
+                ok = setInterval(sayDate, 1000);
+            })
+            document.querySelector("#stop").addEventListener("click", function()
+            {
+                clearInterval(ok);
+            }) */
+            const randomColor = function () {
+                const hex = "0123456789ABCDEF";
+                let color = "#";
+                for (let i = 0; i < 6; i++) {
+                    color += hex[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            };
+            let IntervelId;
+            const startChangingColor = function () {
+                if (!IntervelId) {
+                    IntervelId = setInterval(changeBgColor, 1000);
+                }
+                function changeBgColor() {
+                    document.body.style.backgroundColor = randomColor();
+                }
+            };
+            const stopChangingColor = function () {
+                clearInterval(IntervelId);
+                IntervelId = null;
+            };
+
+            document.querySelector("#start").addEventListener("click", startChangingColor);
+            document.querySelector("#stop").addEventListener("click", stopChangingColor);
+        </script>
+    </body>
+
+</html>
